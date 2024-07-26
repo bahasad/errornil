@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D38F6A02C51A261007466E8 /* SharedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D38F69F2C51A261007466E8 /* SharedUITextField.swift */; };
 		1DD41E612C49DAA3004BAB53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD41E602C49DAA3004BAB53 /* AppDelegate.swift */; };
 		1DD41E632C49DAA3004BAB53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD41E622C49DAA3004BAB53 /* SceneDelegate.swift */; };
 		1DD41E652C49DAA3004BAB53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD41E642C49DAA3004BAB53 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D38F69F2C51A261007466E8 /* SharedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUITextField.swift; sourceTree = "<group>"; };
 		1DD41E5D2C49DAA3004BAB53 /* Practice07182024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice07182024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD41E602C49DAA3004BAB53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DD41E622C49DAA3004BAB53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				1DD41E692C49DAA7004BAB53 /* Assets.xcassets */,
 				1DD41E6B2C49DAA7004BAB53 /* LaunchScreen.storyboard */,
 				1DD41E6E2C49DAA7004BAB53 /* Info.plist */,
+				1D38F69F2C51A261007466E8 /* SharedUITextField.swift */,
 			);
 			path = Practice07182024;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D38F6A02C51A261007466E8 /* SharedUITextField.swift in Sources */,
 				1DD41E652C49DAA3004BAB53 /* ViewController.swift in Sources */,
 				1DD41E612C49DAA3004BAB53 /* AppDelegate.swift in Sources */,
 				1DD41E632C49DAA3004BAB53 /* SceneDelegate.swift in Sources */,

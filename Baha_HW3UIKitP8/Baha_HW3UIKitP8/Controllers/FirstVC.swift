@@ -7,13 +7,18 @@
 
 import UIKit
 
-class FirstVC : UIViewController {
+protocol FirstVCDelegate {
+    func setDataFromNameSurname(name: String, surname: String, description: String)
+}
+
+class FirstVC : UIViewController, FirstVCDelegate {
     
     lazy var carduiview = CardUIView(frame: CGRect(x: 30, y: 101, width: self.view.frame.width - 60, height: 110))
     lazy var uiimageview = FirstVCImageView(frame: CGRect(x: 17, y: 18, width: 75, height: 75))
     lazy var firstvcuilabel = FirstVCUILabel(frame: CGRect(x: uiimageview.frame.maxX + 12, y: 29, width: 111, height: 19), text: "Anna Petrova", weight: .bold)
     lazy var firstvceditbutton = FirstVCUIButton(frame: CGRect(x: uiimageview.frame.maxX + 12, y: firstvcuilabel.frame.maxY + 7, width: 147, height: 30), title: "Редактировать", radius: 10)
     lazy var firstVCArrowBtn = FirstVCArrowRightBtn(frame: CGRect(x: carduiview.frame.width - 27, y: 47, width: 17, height: 17))
+    var desc : String?
 
     
     override func viewDidLoad() {
@@ -41,6 +46,7 @@ class FirstVC : UIViewController {
     
     lazy var editBtnAction: UIAction = UIAction  { _ in
         let secondVC = SecondVC()
+        secondVC.delegate = self
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
     
@@ -51,31 +57,17 @@ class FirstVC : UIViewController {
     
     lazy var FirstVCArrowBtnAction: UIAction = UIAction { _ in
         let thirdVC = ThirdVC()
-        if let text = self.firstvcuilabel.text {
-            thirdVC.text = self.firstvcuilabel.text ?? ""
+        if let desc = self.desc {
+            thirdVC.textForTextView = desc
         }
-        
         self.navigationController?.pushViewController(thirdVC, animated: true)
         
     }
     
-    
-//    UIButton(primaryAction: nextVCAction))
-//    
-//    private lazy var secondVCImage: UIImageView = {
-//        $0.frame.size = CGSize(width: viewWidth - offsetX*2, height: 200)
-//        $0.frame.origin = CGPoint(x: offsetX, y: btn.frame.maxY + 20)
-//        $0.image = .user
-//        return $0
-//    }(UIImageView())
-//    
-//    
-//    lazy var nextVCAction: UIAction = UIAction { [weak self] _ in
-//        let id = "qwerrty"
-//        let secondVC = SecondViewController()
-//        secondVC.image = .user
-//        
-//        self?.navigationController?.pushViewController(secondVC, animated: true)
-//    }
+    func setDataFromNameSurname(name: String, surname: String, description: String){
+        self.firstvcuilabel.text = name + " " + surname
+        self.desc = description
+        
+    }
     
 }

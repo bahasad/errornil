@@ -14,7 +14,7 @@ class SecondVC: UIViewController {
                 .compactMap({$0 as? UIWindowScene})
                 .first?.windows
                 .first(where: { $0.isKeyWindow })?.safeAreaInsets ?? .zero
-    
+    var delegate: FirstVCDelegate?
     
     lazy var nameLabel =  FirstVCUILabel(frame: CGRect(x: 42, y: 97, width: 34, height: 19), text: "Имя", weight: .light)
     lazy var nameTextField = SeconVCTextField(frame: CGRect(x: 30, y: nameLabel.frame.maxY + 5, width: view.frame.size.width - 60, height: 51))
@@ -29,13 +29,40 @@ class SecondVC: UIViewController {
         title = "Настройки"
         view.backgroundColor = .white
         view.addSubviews(view: nameLabel, nameTextField, surnameLabel, surnameTextField, descrLabel, descrTextView, saveBtn)
+        saveBtn.addAction(saveBtnAction, for: .touchUpInside)
+        setDelegates()
+        tapToDismissKey()
                          
                        
+      
+    }
+    lazy var saveBtnAction: UIAction = UIAction { [weak self] _ in
+        guard let self = self else {return}
+        self.delegate?.setDataFromNameSurname(name: self.nameTextField.text ?? "", surname: self.surnameTextField.text ?? "", description: self.descrTextView.text ?? "")
+        self.navigationController?.popViewController(animated: true)
+        
 
-       
+    }
+    func setDelegates() {
+        nameTextField.delegate = self
+        surnameTextField.delegate = self
+    }
+    func tapToDismissKey() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKey))
+        self.view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKey() {
+        view.endEditing(true)
     }
     
 
 
 
+}
+extension SecondVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        surnameTextField.resignFirstResponder()
+        return true
+    }
 }
