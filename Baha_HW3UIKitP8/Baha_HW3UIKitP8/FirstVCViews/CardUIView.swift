@@ -12,7 +12,6 @@ class CardUIView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //self.frame.size = CGSize(width: 370, height: 110)
         self.backgroundColor = UIColor(hex: "#F1F1F1")
         self.layer.cornerRadius = 10
     }

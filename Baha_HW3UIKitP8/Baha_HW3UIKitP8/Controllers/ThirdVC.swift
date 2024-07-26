@@ -28,7 +28,7 @@ class ThirdVC: UIViewController {
     
     lazy var aboutLabel = FirstVCUILabel(frame: CGRect(x: 42, y: headerLabel.frame.maxY + 33, width: 55, height: 19), text: "О себе", weight: .light, textColor: UIColor(hex: "#A7A7A7")!)
     
-    lazy var aboutTextView = SeconVCTextView(frame: CGRect(x: 30, y: aboutLabel.frame.maxY + 9, width: view.frame.size.width - 60 , height: 158), text: textForTextView)
+    lazy var aboutTextView = SeconVCTextView(frame: CGRect(x: 30, y: aboutLabel.frame.maxY + 9, width: view.frame.size.width - 60 , height: 158), text: textForTextView, textContainer: nil)
 
     override func viewDidLoad() {
         

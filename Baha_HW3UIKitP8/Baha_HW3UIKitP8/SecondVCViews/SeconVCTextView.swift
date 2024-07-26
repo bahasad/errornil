@@ -9,7 +9,7 @@ import UIKit
 
 class SeconVCTextView: UITextView {
 
-        init(frame: CGRect,text: String = "", textContainer: NSTextContainer? = nil) {
+        init(frame: CGRect,text: String?, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         self.text = text
         configure()
@@ -26,6 +26,7 @@ class SeconVCTextView: UITextView {
         backgroundColor = UIColor(hex: "#F1F1F1")
         layer.cornerRadius = 10
         font = .systemFont(ofSize: 16)
+        textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
     }
 

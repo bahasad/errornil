@@ -14,6 +14,7 @@ class SecondVC: UIViewController {
                 .compactMap({$0 as? UIWindowScene})
                 .first?.windows
                 .first(where: { $0.isKeyWindow })?.safeAreaInsets ?? .zero
+    
     var delegate: FirstVCDelegate?
     
     lazy var nameLabel =  FirstVCUILabel(frame: CGRect(x: 42, y: 97, width: 34, height: 19), text: "Имя", weight: .light)
@@ -21,8 +22,11 @@ class SecondVC: UIViewController {
     lazy var surnameLabel =  FirstVCUILabel(frame: CGRect(x: nameTextField.frame.minX, y: nameTextField.frame.maxY + 22, width: 73, height: 19), text: "Фамилия", weight:.light)
     lazy var surnameTextField = SeconVCTextField(frame: CGRect(x: nameTextField.frame.minX, y: surnameLabel.frame.maxY + 5, width: nameTextField.frame.size.width, height: 51))
     lazy var descrLabel =  FirstVCUILabel(frame: CGRect(x: surnameLabel.frame.minX, y: surnameTextField.frame.maxY + 22, width: 80, height: 19), text: "Описание", weight: .light)
-    lazy var descrTextView = SeconVCTextView(frame: CGRect(x: surnameTextField.frame.minX, y: descrLabel.frame.maxY + 5, width: surnameTextField.frame.size.width, height: 144))
+    lazy var descrTextView = SeconVCTextView(frame: CGRect(x: surnameTextField.frame.minX, y: descrLabel.frame.maxY + 5, width: surnameTextField.frame.size.width, height: 144), text: "", textContainer: nil)
     lazy var saveBtn = FirstVCUIButton(frame: CGRect(x: descrTextView.frame.minX, y: view.frame.size.height - 73 - safeAreaInsets.bottom - 30, width: descrTextView.frame.size.width, height: 60), title: "Сохранить", radius: 30)
+    
+    var toolBar =  UIToolbar()
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,7 @@ class SecondVC: UIViewController {
         saveBtn.addAction(saveBtnAction, for: .touchUpInside)
         setDelegates()
         tapToDismissKey()
+        setDoneBtn()
                          
                        
       
@@ -53,6 +58,18 @@ class SecondVC: UIViewController {
     }
     @objc func dismissKey() {
         view.endEditing(true)
+    }
+    
+    private func setDoneBtn() {
+        self.toolBar.sizeToFit()
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        flexible.customView?.translatesAutoresizingMaskIntoConstraints = false
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
+        toolBar.setItems([flexible, doneButton], animated: false)
+        descrTextView.inputAccessoryView = toolBar
+    }
+    @objc func doneButtonTapped() {
+        descrTextView.resignFirstResponder()
     }
     
 
