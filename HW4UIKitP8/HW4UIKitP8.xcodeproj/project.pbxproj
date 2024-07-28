@@ -14,6 +14,11 @@
 		1DD010412C5407CA007E0E45 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010402C5407CA007E0E45 /* MainViewController.swift */; };
 		1DD010432C540808007E0E45 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010422C540808007E0E45 /* MessageViewController.swift */; };
 		1DD010452C540878007E0E45 /* AvatarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010442C540878007E0E45 /* AvatarUIView.swift */; };
+		1DD010472C542D2B007E0E45 /* WriteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010462C542D2B007E0E45 /* WriteBtn.swift */; };
+		1DD0104B2C542E82007E0E45 /* UIView.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0104A2C542E82007E0E45 /* UIView.ext.swift */; };
+		1DD0104D2C542F87007E0E45 /* UIColor.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0104C2C542F87007E0E45 /* UIColor.ext.swift */; };
+		1DD0104F2C543469007E0E45 /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0104E2C543469007E0E45 /* RoundBtn.swift */; };
+		1DD010512C56A254007E0E45 /* SharedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010502C56A254007E0E45 /* SharedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		1DD010402C5407CA007E0E45 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1DD010422C540808007E0E45 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		1DD010442C540878007E0E45 /* AvatarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarUIView.swift; sourceTree = "<group>"; };
+		1DD010462C542D2B007E0E45 /* WriteBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBtn.swift; sourceTree = "<group>"; };
+		1DD0104A2C542E82007E0E45 /* UIView.ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.ext.swift; sourceTree = "<group>"; };
+		1DD0104C2C542F87007E0E45 /* UIColor.ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.ext.swift; path = ../../../../Baha_HW3UIKitP8/Baha_HW3UIKitP8/Helpers/Extensions/UIColor.ext.swift; sourceTree = "<group>"; };
+		1DD0104E2C543469007E0E45 /* RoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		1DD010502C56A254007E0E45 /* SharedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 		1DD010282C540697007E0E45 /* HW4UIKitP8 */ = {
 			isa = PBXGroup;
 			children = (
+				1DD010482C542E4D007E0E45 /* Helpers */,
 				1DD0103E2C54079D007E0E45 /* Views */,
 				1DD0103D2C540794007E0E45 /* Controllers */,
 				1DD010292C540697007E0E45 /* AppDelegate.swift */,
@@ -72,7 +83,8 @@
 		1DD0103D2C540794007E0E45 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1DD0103F2C5407AE007E0E45 /* New Group */,
+				1DD010402C5407CA007E0E45 /* MainViewController.swift */,
+				1DD010422C540808007E0E45 /* MessageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,17 +93,28 @@
 			isa = PBXGroup;
 			children = (
 				1DD010442C540878007E0E45 /* AvatarUIView.swift */,
+				1DD010462C542D2B007E0E45 /* WriteBtn.swift */,
+				1DD0104E2C543469007E0E45 /* RoundBtn.swift */,
+				1DD010502C56A254007E0E45 /* SharedLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1DD0103F2C5407AE007E0E45 /* New Group */ = {
+		1DD010482C542E4D007E0E45 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1DD010402C5407CA007E0E45 /* MainViewController.swift */,
-				1DD010422C540808007E0E45 /* MessageViewController.swift */,
+				1DD010492C542E55007E0E45 /* Extensions */,
 			);
-			path = "New Group";
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1DD010492C542E55007E0E45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1DD0104C2C542F87007E0E45 /* UIColor.ext.swift */,
+				1DD0104A2C542E82007E0E45 /* UIView.ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,10 +187,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD0104D2C542F87007E0E45 /* UIColor.ext.swift in Sources */,
 				1DD0102A2C540697007E0E45 /* AppDelegate.swift in Sources */,
 				1DD0102C2C540697007E0E45 /* SceneDelegate.swift in Sources */,
 				1DD010452C540878007E0E45 /* AvatarUIView.swift in Sources */,
+				1DD0104B2C542E82007E0E45 /* UIView.ext.swift in Sources */,
 				1DD010432C540808007E0E45 /* MessageViewController.swift in Sources */,
+				1DD0104F2C543469007E0E45 /* RoundBtn.swift in Sources */,
+				1DD010512C56A254007E0E45 /* SharedLabel.swift in Sources */,
+				1DD010472C542D2B007E0E45 /* WriteBtn.swift in Sources */,
 				1DD010412C5407CA007E0E45 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +344,6 @@
 				INFOPLIST_FILE = HW4UIKitP8/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -343,7 +370,6 @@
 				INFOPLIST_FILE = HW4UIKitP8/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
