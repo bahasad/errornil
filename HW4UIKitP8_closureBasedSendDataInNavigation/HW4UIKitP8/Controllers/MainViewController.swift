@@ -17,7 +17,7 @@ class MainViewController: UIViewController, MainViewControllerDelegate {
     lazy var msgUIView: UIView = {
         $0.backgroundColor = UIColor(hex: "#F0F0F0")
         $0.layer.cornerRadius = 30
-        $0.frame = CGRect(x: 30, y: writeBtn.frame.maxY + 43, width: view.bounds.size.width - 60, height: 84)
+        $0.frame = CGRect(x: 30, y: writeBtn.frame.maxY + 43, width: view.frame.size.width - 60, height: 84)
         return $0
     }(UIView())
     
@@ -30,27 +30,16 @@ class MainViewController: UIViewController, MainViewControllerDelegate {
     lazy var tikBtn = RoundBtn(frame: CGRect(x: instaBtn.frame.maxX + 12, y: 28, width: 34, height: 34), radius: 30, image: .tik, backgroundColor: .clear)
     lazy var vkBtn = RoundBtn(frame: CGRect(x: tikBtn.frame.maxX + 12, y: 28, width: 34, height: 34), radius: 30, image: .vk, backgroundColor: .clear)
     
-    lazy var ageLabel =  SharedLabel(frame: CGRect(x: 31, y: avatarUIImageView.frame.size.height - 51, width: 52, height: 19), size: 16, weight: .light, text: "25 лет", textColor: .white)
+    lazy var ageLabel =  SharedLabel(frame: CGRect(x: 31, y: avatarUIImageView.bounds.size.height - 51, width: 52, height: 19), size: 16, weight: .light, text: "25 лет", textColor: .white)
     lazy var nameLabel = SharedLabel(frame: CGRect(x: 31, y: ageLabel.frame.minY - 22, width: 140, height: 24), size: 20, weight: .bold, text: "Имя Фамилия", textColor: .white)
     lazy var starImageView: UIImageView = {
         $0.image = .star
         $0.frame = CGRect(x: nameLabel.frame.maxX, y: ageLabel.frame.minY - 22, width: 29, height: 29)
         return $0
     }(UIImageView())
-    lazy var threeDotsBtn = RoundBtn(frame: CGRect(x: avatarUIImageView.frame.size.width - 78, y: 21, width: 49, height: 49), radius: 0, image: UIImage(named: "threedots"), backgroundColor: .clear)
+    lazy var threeDotsBtn = RoundBtn(frame: CGRect(x: avatarUIImageView.bounds.size.width - 78, y: 21, width: 49, height: 49), radius: 0, image: UIImage(named: "threedots"), backgroundColor: .clear)
         
     lazy var writeBtn = WriteBtn(frame: CGRect(x: 111, y: avatarUIImageView.frame.maxY + 36, width: view.bounds.size.width - 222, height: 50), radius: 20)
-    
-    
-//    lazy var writeBtn: UIButton = {
-//        $0.frame = CGRect(x: 111, y: avatarUIImageView.frame.maxY + 36, width: view.bounds.size.width - 222, height: 50)
-//        $0.setTitle("Написать", for: .normal)
-//        $0.layer.cornerRadius = 20
-//        $0.titleLabel?.font = .systemFont(ofSize: 16)
-//        $0.setTitleColor(.white, for: .normal)
-//        $0.backgroundColor = UIColor(hex: "#25A952")
-//        return $0
-//    }(UIButton(primaryAction: writeBtnAction))
     
     
     override func viewDidLoad() {
