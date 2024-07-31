@@ -9,8 +9,15 @@ import UIKit
 
 final class SharedLabel: UILabel {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(size: CGFloat, weight: UIFont.Weight = .bold, textColor: UIColor = .black, text: String) {
+        super.init(frame: .zero)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.font = .systemFont(ofSize: size, weight: weight)
+        self.textColor = textColor
+        self.text = text
+        self.numberOfLines = 0
+        self.lineBreakMode = .byWordWrapping
+        self.adjustsFontSizeToFitWidth = true
         configure()
     }
     

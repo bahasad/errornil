@@ -9,8 +9,8 @@ import UIKit
 
 final class SharedBtn: UIButton {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: .zero)
         configure()
     }
     

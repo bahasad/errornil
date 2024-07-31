@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DAF7FE22C59921200F622AE /* SharedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF7FE12C59921200F622AE /* SharedView.swift */; };
+		1DAF7FE42C59A4B100F622AE /* SharedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF7FE32C59A4B000F622AE /* SharedImageView.swift */; };
+		1DAF7FE62C59AC2D00F622AE /* HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF7FE52C59AC2D00F622AE /* HeaderFooterView.swift */; };
+		1DAF7FE82C59DD0F00F622AE /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF7FE72C59DD0F00F622AE /* FooterView.swift */; };
 		1DD0105F2C56DFAA007E0E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0105E2C56DFAA007E0E45 /* AppDelegate.swift */; };
 		1DD010612C56DFAA007E0E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010602C56DFAA007E0E45 /* SceneDelegate.swift */; };
 		1DD010682C56DFAD007E0E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DD010672C56DFAD007E0E45 /* Assets.xcassets */; };
 		1DD0106B2C56DFAD007E0E45 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DD0106A2C56DFAD007E0E45 /* Base */; };
-		1DD010732C56E079007E0E45 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010722C56E079007E0E45 /* MainViewController.swift */; };
+		1DD010732C56E079007E0E45 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010722C56E079007E0E45 /* MainVC.swift */; };
 		1DD010772C56E0D7007E0E45 /* SharedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010762C56E0D7007E0E45 /* SharedBtn.swift */; };
 		1DD010792C56E118007E0E45 /* SharedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD010782C56E118007E0E45 /* SharedLabel.swift */; };
 		1DD0107E2C56E16C007E0E45 /* UIColor.ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0107C2C56E16C007E0E45 /* UIColor.ext.swift */; };
@@ -19,13 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DAF7FE12C59921200F622AE /* SharedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedView.swift; sourceTree = "<group>"; };
+		1DAF7FE32C59A4B000F622AE /* SharedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedImageView.swift; sourceTree = "<group>"; };
+		1DAF7FE52C59AC2D00F622AE /* HeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderFooterView.swift; sourceTree = "<group>"; };
+		1DAF7FE72C59DD0F00F622AE /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		1DD0105B2C56DFAA007E0E45 /* DraftWithoutStoryboardAndWithSetUpScene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DraftWithoutStoryboardAndWithSetUpScene.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD0105E2C56DFAA007E0E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DD010602C56DFAA007E0E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1DD010672C56DFAD007E0E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DD0106A2C56DFAD007E0E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DD0106C2C56DFAD007E0E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DD010722C56E079007E0E45 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1DD010722C56E079007E0E45 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		1DD010762C56E0D7007E0E45 /* SharedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedBtn.swift; sourceTree = "<group>"; };
 		1DD010782C56E118007E0E45 /* SharedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLabel.swift; sourceTree = "<group>"; };
 		1DD0107C2C56E16C007E0E45 /* UIColor.ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.ext.swift; path = ../../../../Baha_HW3UIKitP8/Baha_HW3UIKitP8/Helpers/Extensions/UIColor.ext.swift; sourceTree = "<group>"; };
@@ -79,6 +87,10 @@
 			children = (
 				1DD010762C56E0D7007E0E45 /* SharedBtn.swift */,
 				1DD010782C56E118007E0E45 /* SharedLabel.swift */,
+				1DAF7FE12C59921200F622AE /* SharedView.swift */,
+				1DAF7FE32C59A4B000F622AE /* SharedImageView.swift */,
+				1DAF7FE52C59AC2D00F622AE /* HeaderFooterView.swift */,
+				1DAF7FE72C59DD0F00F622AE /* FooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -86,7 +98,7 @@
 		1DD010752C56E09C007E0E45 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1DD010722C56E079007E0E45 /* MainViewController.swift */,
+				1DD010722C56E079007E0E45 /* MainVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,11 +190,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DD010732C56E079007E0E45 /* MainViewController.swift in Sources */,
+				1DD010732C56E079007E0E45 /* MainVC.swift in Sources */,
 				1DD0107F2C56E16C007E0E45 /* UIView.ext.swift in Sources */,
+				1DAF7FE62C59AC2D00F622AE /* HeaderFooterView.swift in Sources */,
 				1DD010772C56E0D7007E0E45 /* SharedBtn.swift in Sources */,
 				1DD0107E2C56E16C007E0E45 /* UIColor.ext.swift in Sources */,
 				1DD010792C56E118007E0E45 /* SharedLabel.swift in Sources */,
+				1DAF7FE82C59DD0F00F622AE /* FooterView.swift in Sources */,
+				1DAF7FE42C59A4B100F622AE /* SharedImageView.swift in Sources */,
+				1DAF7FE22C59921200F622AE /* SharedView.swift in Sources */,
 				1DD0105F2C56DFAA007E0E45 /* AppDelegate.swift in Sources */,
 				1DD010612C56DFAA007E0E45 /* SceneDelegate.swift in Sources */,
 			);
@@ -339,7 +355,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.baha.DraftWithoutStoryboardAndWithSetUpScene;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.HW5UIkitP8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -365,7 +381,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.baha.DraftWithoutStoryboardAndWithSetUpScene;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.HW5UIkitP8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
