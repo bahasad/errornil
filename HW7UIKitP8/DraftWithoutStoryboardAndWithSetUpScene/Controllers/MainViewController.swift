@@ -8,19 +8,20 @@
 import UIKit
 
 struct UserData {
-    var mainImage: UIImage?
-    var imgInImage: UIImage?
+    var mainImage: String
+    var imgInImage: String
     let name: String
     let header: String
-    let textView: String
+    let texttLabel: String
     
     static func mockData() -> [UserData] {
         [
-            UserData(mainImage: UIImage(named: ""), imgInImage: UIImage(named: ""), name: "John Doe", header: "Заголовок", textView: "Lorem ipsum dolor sit amet, consectetur\n adipisicing elit, sed do eiusmod\n tempor incididunt ut labore"),
-            UserData(mainImage: UIImage(named: ""), imgInImage: UIImage(named: ""), name: "Robert Wilson", header: "Заголовок 2", textView: "Lorem ipsum dolor sit amet, consectetur\n adipisicing elit, sed do eiusmod\n tempor incididunt ut labore in reprehenderit\n in voluptate velit esse cillum dolore eu\n fugiat nulla pariatur. Excepteur Lorem\n ipsum dolor sit amet, consectetur\n adipisicing elit, sed do eiusmod tempor\n incididunt ut labore et dolore magna aliqua. " )
+            UserData(mainImage: "eagle" , imgInImage: "flowers" , name: "John Doe", header: "Заголовок", texttLabel: "Lorem ipsum dolor sit amet, consectetur\n adipisicing elit, sed do eiusmod\n tempor incididunt ut labore"),
+            UserData(mainImage: "wall", imgInImage: "rain", name: "Robert Wilson", header: "Заголовок 2", texttLabel: "Lorem ipsum dolor sit amet, consectetur\n adipisicing elit, sed do eiusmod\n tempor incididunt ut labore in reprehenderit\n in voluptate velit esse cillum dolore eu\n fugiat nulla pariatur. Excepteur Lorem\n ipsum dolor sit amet, consectetur\n adipisicing elit, sed do eiusmod tempor\n incididunt ut labore et dolore magna aliqua. " )
         ]
     }
 }
+
 
 final class MainViewController: UIViewController {
     
@@ -52,9 +53,10 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let item = tableData[indexPath.row]
+        let item = tableData[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.reuseId, for: indexPath) as! DetailCell
-               
+        cell.selectionStyle = .none
+        cell.setupData(item: item)
         return cell
     }
 }

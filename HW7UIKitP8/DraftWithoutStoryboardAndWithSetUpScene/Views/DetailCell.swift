@@ -9,35 +9,118 @@ import UIKit
 
 final class DetailCell: UITableViewCell {
     
+    //let userData: UserData?
+    
     static var reuseId = "CellID"
     
-    lazy var mainView: UIView = {
+    private lazy var mainView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .red
-        $0.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        $0.backgroundColor = UIColor(hex: "#D9D9D9")
+        $0.layer.cornerRadius = 30
+//        $0.heightAnchor.constraint(equalToConstant: 150).isActive = true
         return $0
     }(UIView())
     
-    lazy var headerImageView: UIView = {
-        
+    private lazy var headerImageView: UIImageView = {
+        $0.layer.cornerRadius = 30
+        //$0.image = UIImage(named: "eagle.jpg")
+        $0.contentMode = .scaleToFill
+        $0.clipsToBounds = true
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
-    }(UIView())
+    }(UIImageView())
+    
+    private lazy var imgInMainImage: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+       // $0.image = UIImage(named: "eagle.jpg")
+        $0.contentMode = .scaleToFill
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 31.5
+        return $0
+    }(UIImageView())
+    
+    private lazy var nameLabel: UILabel = {
+        $0.textColor = .white
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(UILabel())
+    
+    private lazy var headerLabel: UILabel = {
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        return $0
+    }(UILabel())
+    
+    private lazy var texttLabel: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.font = .systemFont(ofSize: 16, weight: .light)
+        $0.textColor = .black
+        $0.numberOfLines = 0
+        return $0
+    }(UILabel())
+    
+    private lazy var btn: UIButton = {
+        $0.backgroundColor = UIColor(hex: "#25A952")
+        $0.setTitle("next", for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 16)
+        $0.setTitleColor(.white, for: .normal)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.cornerRadius = 15
+        return $0
+    }(UIButton())
+    
+    
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(mainView)
+        mainView.addSubviews(view: headerImageView, headerLabel, texttLabel, btn, imgInMainImage, nameLabel)
         backgroundColor = .clear
+        //setupData()
+    }
+    
+    func setupData(item: UserData) {
+        headerImageView.image = UIImage(named: item.mainImage)
+        imgInMainImage.image = UIImage(named: item.imgInImage)
+        nameLabel.text = item.name
+        headerLabel.text = item.header
+        texttLabel.text = item.texttLabel
+        
+        
+        
         setConstraints()
     }
     
    
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            mainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            mainView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 11),
+            mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            mainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -11),
+            headerImageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20),
+            headerImageView.heightAnchor.constraint(equalToConstant: 239),
+            headerImageView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20),
+            headerImageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -20),
+            imgInMainImage.heightAnchor.constraint(equalToConstant: 63),
+            imgInMainImage.widthAnchor.constraint(equalToConstant: 63),
+            imgInMainImage.topAnchor.constraint(equalTo: headerImageView.topAnchor, constant: 20),
+            imgInMainImage.leadingAnchor.constraint(equalTo: headerImageView.leadingAnchor, constant: 20),
+            nameLabel.bottomAnchor.constraint(equalTo: headerImageView.bottomAnchor, constant: -40),
+            nameLabel.leadingAnchor.constraint(equalTo: headerImageView.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: headerImageView.trailingAnchor, constant: -20),
+            headerLabel.topAnchor.constraint(equalTo: headerImageView.bottomAnchor, constant: 21),
+            headerLabel.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 21),
+            headerLabel.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -21),
+            texttLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 12),
+            texttLabel.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20),
+            texttLabel.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: 20),
+            btn.topAnchor.constraint(equalTo: texttLabel.bottomAnchor, constant: 26),
+            btn.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20),
+            btn.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -20),
+            btn.heightAnchor.constraint(equalToConstant: 50),
+            mainView.bottomAnchor.constraint(equalTo: btn.bottomAnchor, constant: 40)
         ])
         
     }
