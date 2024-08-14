@@ -23,6 +23,10 @@ class SharedStack: UIStackView {
         translatesAutoresizingMaskIntoConstraints = false
         axis = .horizontal
         
+        distribution = stackDistribution
+        alignment = stackAlignment
+        spacing = stackSpacing
+        
     }
     
     required init(coder: NSCoder) {

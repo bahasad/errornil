@@ -12,7 +12,7 @@ class SharedImage: UIImageView {
     override init(image: UIImage?) {
         super.init(image: image)
         translatesAutoresizingMaskIntoConstraints = false
-        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFill
         clipsToBounds = true
     }
     

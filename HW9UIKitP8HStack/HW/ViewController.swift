@@ -39,7 +39,7 @@ final class ViewController: UIViewController {
         return $0
     }(UIStackView())
     
-    private lazy var stackForReview = SharedStack(stackDistribution: .equalSpacing, stackSpacing: 16)
+    private lazy var stackForReview = SharedStack(stackDistribution: .fill, stackSpacing: 6)
     
     private lazy var reviewLabel = SharedLabel(size: 15, weight: .light, color: .appGray, texxt: "249 отзывов")
     
@@ -63,7 +63,7 @@ final class ViewController: UIViewController {
     
     private lazy var descTextLabel = SharedLabel(size: 14, weight: .light, color: .black, texxt: text)
     
-    private lazy var stackForFooterImgView = SharedStack(stackDistribution: .equalSpacing, stackAlignment: .fill, stackSpacing: 10)
+    private lazy var stackForFooterImgView = SharedStack(stackDistribution: .fillEqually, stackAlignment: .fill,  stackSpacing: 10)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,72 +76,47 @@ final class ViewController: UIViewController {
     }
     
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-            viewScrollContent.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
-            viewScrollContent.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            viewScrollContent.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            viewScrollContent.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            viewScrollContent.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
-        ])
-        
-        
+       
         viewScrollContent.addSubview(headerImage)
-        NSLayoutConstraint.activate([
-            headerImage.topAnchor.constraint(equalTo: viewScrollContent.topAnchor),
-            headerImage.leadingAnchor.constraint(equalTo: viewScrollContent.leadingAnchor),
-            headerImage.trailingAnchor.constraint(equalTo: viewScrollContent.trailingAnchor),
-            headerImage.heightAnchor.constraint(equalToConstant: 430),
-        ])
-        
         viewScrollContent.addSubview(mainLabelStack)
         viewScrollContent.addSubview(stackForReview)
         viewScrollContent.addSubview(stackForPrice)
         viewScrollContent.addSubview(descLabel)
         viewScrollContent.addSubview(descTextLabel)
         viewScrollContent.addSubview(stackForFooterImgView)
-        
         mainLabelStack.addArrangedSubview(mainLabel)
         mainLabelStack.addArrangedSubview(starMainImage)
-        
         images.forEach{ image in
             let imageView = SharedImage(image: image)
             stackForFooterImgView.addArrangedSubview(imageView)
         }
-        
-        NSLayoutConstraint.activate([
-            mainLabelStack.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: 41),
-            mainLabelStack.leadingAnchor.constraint(equalTo: headerImage.leadingAnchor, constant: 16),
-            mainLabelStack.trailingAnchor.constraint(equalTo: headerImage.trailingAnchor, constant: -16),
-            
-
-        ])
-        
-
         for _ in 1...3 {
             let imageview = SharedImage(image: UIImage(named: "StarColorFiiled"))
-            
-            
             stackForReview.addArrangedSubview(imageview)
         }
         let imageviewstar = SharedImage(image: UIImage(named: "StarColorNotFilled"))
         
         stackForReview.addArrangedSubview(imageviewstar)
         stackForReview.addArrangedSubview(reviewLabel)
-        
-        NSLayoutConstraint.activate([
-            stackForReview.topAnchor.constraint(equalTo: mainLabelStack.bottomAnchor, constant: 21),
-            stackForReview.leadingAnchor.constraint(equalTo: viewScrollContent.leadingAnchor, constant: 15),
-            stackForReview.trailingAnchor.constraint(equalTo: viewScrollContent.trailingAnchor, constant: -15),
-//            stackForReview.widthAnchor.constraint(equalToConstant: 88),
-
-
-    
-        ])
-        
         stackForPrice.addArrangedSubview(priceLabel)
         stackForPrice.addArrangedSubview(basketBtn)
         
         NSLayoutConstraint.activate([
+            headerImage.topAnchor.constraint(equalTo: viewScrollContent.topAnchor),
+            headerImage.leadingAnchor.constraint(equalTo: viewScrollContent.leadingAnchor),
+            headerImage.trailingAnchor.constraint(equalTo: viewScrollContent.trailingAnchor),
+            headerImage.heightAnchor.constraint(equalToConstant: 430),
+            stackForReview.topAnchor.constraint(equalTo: mainLabelStack.bottomAnchor, constant: 21),
+            stackForReview.leadingAnchor.constraint(equalTo: viewScrollContent.leadingAnchor, constant: 15),
+            stackForReview.trailingAnchor.constraint(equalTo: viewScrollContent.trailingAnchor, constant: -15),
+            viewScrollContent.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+            viewScrollContent.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            viewScrollContent.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            viewScrollContent.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            viewScrollContent.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            mainLabelStack.topAnchor.constraint(equalTo: headerImage.bottomAnchor, constant: 41),
+            mainLabelStack.leadingAnchor.constraint(equalTo: headerImage.leadingAnchor, constant: 16),
+            mainLabelStack.trailingAnchor.constraint(equalTo: headerImage.trailingAnchor, constant: -16),
             basketBtn.widthAnchor.constraint(equalToConstant: 139),
             basketBtn.heightAnchor.constraint(equalToConstant: 49),
             stackForPrice.topAnchor.constraint(equalTo: stackForReview.bottomAnchor, constant: 14),
@@ -153,11 +128,10 @@ final class ViewController: UIViewController {
             descTextLabel.leadingAnchor.constraint(equalTo: viewScrollContent.leadingAnchor, constant: 15),
             descTextLabel.trailingAnchor.constraint(equalTo: viewScrollContent.trailingAnchor, constant: -15),
             stackForFooterImgView.topAnchor.constraint(equalTo: descTextLabel.bottomAnchor, constant: 48),
-            stackForFooterImgView.leadingAnchor.constraint(equalTo: descTextLabel.leadingAnchor),
-//            stackForFooterImgView.centerXAnchor.constraint(equalTo: viewScrollContent.centerXAnchor),
-            //stackForFooterImgView.trailingAnchor.constraint(equalTo: viewScrollContent.trailingAnchor, constant: -15),
+            stackForFooterImgView.leadingAnchor.constraint(equalTo: viewScrollContent.leadingAnchor, constant: 15),
+            stackForFooterImgView.trailingAnchor.constraint(equalTo: viewScrollContent.trailingAnchor, constant: -15),
+            stackForFooterImgView.bottomAnchor.constraint(equalTo: viewScrollContent.bottomAnchor, constant: -50),
             stackForFooterImgView.heightAnchor.constraint(equalToConstant: 120),
-            stackForFooterImgView.widthAnchor.constraint(equalToConstant: 400)
             
         ])
         
