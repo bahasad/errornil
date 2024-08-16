@@ -12,6 +12,10 @@
 		1DAF80002C66F5A200F622AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF7FFF2C66F5A200F622AE /* ViewController.swift */; };
 		1DAF80052C66F5A600F622AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF80042C66F5A600F622AE /* Assets.xcassets */; };
 		1DAF80082C66F5A600F622AE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1DAF80072C66F5A600F622AE /* Base */; };
+		1DAF80302C6EDA6B00F622AE /* CarsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF802F2C6EDA6B00F622AE /* CarsCell.swift */; };
+		1DAF80322C6EDCA400F622AE /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF80312C6EDCA400F622AE /* UserData.swift */; };
+		1DAF80382C6EEB8400F622AE /* SharedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF80372C6EEB8400F622AE /* SharedLabel.swift */; };
+		1DAF803A2C6EEB9000F622AE /* SharedStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF80392C6EEB8F00F622AE /* SharedStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		1DAF80042C66F5A600F622AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DAF80072C66F5A600F622AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DAF80092C66F5A600F622AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DAF802F2C6EDA6B00F622AE /* CarsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsCell.swift; sourceTree = "<group>"; };
+		1DAF80312C6EDCA400F622AE /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		1DAF80372C6EEB8400F622AE /* SharedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedLabel.swift; sourceTree = "<group>"; };
+		1DAF80392C6EEB8F00F622AE /* SharedStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +62,13 @@
 		1DAF7FFA2C66F5A200F622AE /* HW */ = {
 			isa = PBXGroup;
 			children = (
+				1DAF80392C6EEB8F00F622AE /* SharedStack.swift */,
+				1DAF80372C6EEB8400F622AE /* SharedLabel.swift */,
+				1DAF80312C6EDCA400F622AE /* UserData.swift */,
 				1DAF7FFB2C66F5A200F622AE /* AppDelegate.swift */,
 				1DAF7FFD2C66F5A200F622AE /* SceneDelegate.swift */,
 				1DAF7FFF2C66F5A200F622AE /* ViewController.swift */,
+				1DAF802F2C6EDA6B00F622AE /* CarsCell.swift */,
 				1DAF80042C66F5A600F622AE /* Assets.xcassets */,
 				1DAF80062C66F5A600F622AE /* LaunchScreen.storyboard */,
 				1DAF80092C66F5A600F622AE /* Info.plist */,
@@ -136,7 +148,11 @@
 			files = (
 				1DAF80002C66F5A200F622AE /* ViewController.swift in Sources */,
 				1DAF7FFC2C66F5A200F622AE /* AppDelegate.swift in Sources */,
+				1DAF80302C6EDA6B00F622AE /* CarsCell.swift in Sources */,
+				1DAF80382C6EEB8400F622AE /* SharedLabel.swift in Sources */,
+				1DAF80322C6EDCA400F622AE /* UserData.swift in Sources */,
 				1DAF7FFE2C66F5A200F622AE /* SceneDelegate.swift in Sources */,
+				1DAF803A2C6EEB9000F622AE /* SharedStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
