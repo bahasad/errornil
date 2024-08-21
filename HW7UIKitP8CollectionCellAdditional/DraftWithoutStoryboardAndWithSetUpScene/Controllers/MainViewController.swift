@@ -28,16 +28,22 @@ final class MainViewController: UIViewController {
     var tableData = UserData.mockData()
     
     lazy var collectionView: UICollectionView = {
+        let layout = $0.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 20
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        $0.contentInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
         $0.dataSource = self
         $0.register(DetailCell.self, forCellWithReuseIdentifier: DetailCell.reuseId)
         return $0
-    }(UICollectionView(frame: view.frame, collectionViewLayout: layout()))
+    }(UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout()))
     
     
     private func layout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
 //        let viewWidth = self.view.bounds.size.width
-        layout.itemSize = CGSize(width: 400, height: 600)
+       // layout.itemSize = CGSize(width: 400, height: 600)
 //      layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         ////layout.minimumLineSpacing = 10
         ////.minimumInteritemSpacing = 10

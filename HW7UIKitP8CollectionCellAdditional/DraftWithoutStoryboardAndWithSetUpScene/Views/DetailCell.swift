@@ -88,15 +88,18 @@ final class DetailCell: UICollectionViewCell {
     
    
     private func setConstraints() {
+        let hAnchor = headerImageView.heightAnchor.constraint(equalTo: headerImageView.widthAnchor, multiplier: headerImageView.image?.getRatio() ?? 1)
+        hAnchor.priority = .defaultHigh
         NSLayoutConstraint.activate([
             mainView.topAnchor.constraint(equalTo: topAnchor, constant: 11),
             mainView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             mainView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             mainView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -11),
             headerImageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20),
-            headerImageView.heightAnchor.constraint(equalToConstant: 239),
+            headerImageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             headerImageView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20),
             headerImageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -20),
+            hAnchor,
             imgInMainImage.heightAnchor.constraint(equalToConstant: 63),
             imgInMainImage.widthAnchor.constraint(equalToConstant: 63),
             imgInMainImage.topAnchor.constraint(equalTo: headerImageView.topAnchor, constant: 20),
@@ -114,7 +117,7 @@ final class DetailCell: UICollectionViewCell {
             btn.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20),
             btn.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -20),
             btn.heightAnchor.constraint(equalToConstant: 50),
-            mainView.bottomAnchor.constraint(equalTo: btn.bottomAnchor, constant: 40)
+            //mainView.bottomAnchor.constraint(equalTo: btn.bottomAnchor, constant: 40)
         ])
         
     }
@@ -127,4 +130,10 @@ final class DetailCell: UICollectionViewCell {
     
     
 
+}
+extension UIImage {
+    func getRatio() -> CGFloat {
+        return self.size.height / self.size.width
+    }
+    
 }
