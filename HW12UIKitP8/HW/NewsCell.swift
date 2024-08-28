@@ -11,7 +11,7 @@ class NewsCell: UICollectionViewCell, CellProtocol {
     
     static var reuseId: String = "NewsCell"
     
-    var imageView: UIImageView = CustomImageView(contentMode: .scaleToFill)
+    var imageView: UIImageView = CustomImageView(contentMode: .scaleAspectFill)
     
     lazy var titleLabel = CustomLabel(size: 24, weight: .bold, color: .white)
     
@@ -39,6 +39,7 @@ class NewsCell: UICollectionViewCell, CellProtocol {
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             descLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            descLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40)
             
         ])
