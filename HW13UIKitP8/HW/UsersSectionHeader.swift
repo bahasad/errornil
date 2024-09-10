@@ -14,22 +14,29 @@ class UsersSectionHeader: UICollectionReusableView {
     lazy var headerText: UILabel = {
         $0.font = .systemFont(ofSize: 20, weight: .black)
         $0.textColor = .black
-        $0.translatesAutoresizingMaskIntoConstraints = false
         $0.numberOfLines = 0
         return $0
     }(UILabel())
     
     lazy var headerBtn: UIButton = {
         $0.setTitleColor(.black, for: .normal)
-        $0.translatesAutoresizingMaskIntoConstraints = false
         $0.titleLabel?.font = .systemFont(ofSize: 14, weight: .light)
         $0.setTitleColor(.blue, for: .normal)
         return $0
     }(UIButton())
     
+    lazy var hStack: UIStackView = {
+        $0.addArrangedSubview(headerText)
+        $0.addArrangedSubview(headerBtn)
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.axis = .horizontal
+        $0.distribution = .equalSpacing
+        return $0
+    }(UIStackView())
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        [headerText, headerBtn].forEach {
+        [hStack].forEach {
             addSubview($0)
         }
         configure()
@@ -37,10 +44,16 @@ class UsersSectionHeader: UICollectionReusableView {
     
     func configure() {
         NSLayoutConstraint.activate([
-            headerText.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            headerText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 13),
-            headerBtn.topAnchor.constraint(equalTo: headerText.topAnchor),
-            headerBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -43),
+            
+            hStack.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            hStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            hStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            hStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+            
+//            headerText.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+//            headerText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 13),
+//            headerBtn.topAnchor.constraint(equalTo: headerText.topAnchor),
+//            headerBtn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -43),
         ])
         
         

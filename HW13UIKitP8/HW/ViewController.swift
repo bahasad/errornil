@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         
         section.orthogonalScrollingBehavior = .groupPaging
         
-        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 30, bottom: 85, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 30, bottom: 0, trailing: 0)
         
         section.boundarySupplementaryItems = [self.setupHeaderSize()]
         
@@ -100,10 +100,21 @@ class ViewController: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
         
-        section.boundarySupplementaryItems = [self.setupHeaderSize()]
+        section.boundarySupplementaryItems = [self.setupUsersHeaderSize()]
+        
+        section.contentInsets = NSDirectionalEdgeInsets(top: 50, leading: 0, bottom: 0, trailing: 0)
         
         return section
         
+    }
+    
+    private func setupUsersHeaderSize() -> NSCollectionLayoutBoundarySupplementaryItem {
+         let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                                 heightDimension: .absolute(25)),
+              elementKind: UICollectionView.elementKindSectionHeader, alignment: .top
+        )
+        header.contentInsets = NSDirectionalEdgeInsets(top: 40, leading: 43, bottom: 15, trailing: 43)
+        return header
     }
     
     

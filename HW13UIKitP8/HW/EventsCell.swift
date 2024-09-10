@@ -13,7 +13,7 @@ class EventsCell: UICollectionViewCell {
     
     private lazy var imageMain = CustomImage()
     
-    private lazy var labelText = CustomLabel(size: 14, weight: .light)
+    private lazy var labelText = CustomLabel(size: 12, weight: .light)
     
     private lazy var btn: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +39,7 @@ class EventsCell: UICollectionViewCell {
             imageMain.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 18),
             labelText.leadingAnchor.constraint(equalTo: imageMain.trailingAnchor, constant: 10),
             labelText.centerYAnchor.constraint(equalTo: centerYAnchor),
-            btn.leadingAnchor.constraint(equalTo: labelText.trailingAnchor, constant: 27),
+            btn.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -14),
             btn.topAnchor.constraint(equalTo:  imageMain.topAnchor)
         ])
     }
