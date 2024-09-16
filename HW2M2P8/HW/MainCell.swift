@@ -51,10 +51,11 @@ class MainCell: UICollectionViewCell {
         
     }
     
-    func setCellData(results: Response, indexRow: Int) {
-        imageView.image = UIImage(named: results.results[indexRow].image!)
-        titleLabel.text = results.results[indexRow].name
-        descLabel.text = results.results[indexRow].gender
+    func setCellData(results: Results) {
+        guard let url = URL(string: results.image ?? "" ) else { return }
+        imageView.load(url: url)
+        titleLabel.text = results.name
+        descLabel.text = results.gender
     }
     
     

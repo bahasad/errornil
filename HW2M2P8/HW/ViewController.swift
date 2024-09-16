@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let networkManager = NetworkManager()
-    //private var results: Response 
+    private var results: [Results] = []
     
     private lazy var btn: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -20,11 +20,12 @@ class ViewController: UIViewController {
         $0.titleLabel?.font = .systemFont(ofSize: 12, weight: .light)
         $0.setTitleColor(.white, for: .normal)
         return $0
-    }(UIButton())
+    }(UIButton(primaryAction: UIAction(handler: {  _ in
+        self.sendReq()
+    })))
     
     private lazy var collectionView: UICollectionView = {
         $0.register(MainCell.self, forCellWithReuseIdentifier: MainCell.reuseId)
-       //$0.translatesAutoresizingMaskIntoConstraints = false
         $0.dataSource = self
         return $0
     }(UICollectionView(frame: view.frame, collectionViewLayout: setLayout()))
@@ -65,12 +66,6 @@ class ViewController: UIViewController {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            
-//            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-//            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            collectionView.bottomAnchor.constraint(equalTo: btn.topAnchor, constant: -10),
-            
             btn.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -38),
             btn.heightAnchor.constraint(equalToConstant: 66),
             btn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -88,14 +83,15 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        results.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.reuseId, for: indexPath) as! MainCell
-          //  cell.setCellData(results: Response, indexRow: indexPath.item)
+            cell.setCellData(results: results[indexPath.item])
+            UIImageView.load()
             return cell
         }
     }
@@ -103,17 +99,17 @@ extension ViewController: UICollectionViewDataSource {
     
 }
 
-//extension ViewController {
-//    func sendReq(){
-//        networkManager.sendRequest { [weak self] results in
-//            guard let self = self else { return }
-//            self.results = results
-//            
-//            DispatchQueue.main.async {
-//                self.collectionView.reloadData()
-//            }
-//            
-//        }
-//    }
-//    
-//}
+extension ViewController {
+    func sendReq(){
+        networkManager.sendRequest { [weak self] results in
+            guard let self = self else { return }
+            self.results = results
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
+        }
+    }
+    
+}
