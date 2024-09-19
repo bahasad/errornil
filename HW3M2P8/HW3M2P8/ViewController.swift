@@ -34,9 +34,14 @@ class ViewController: UIViewController {
         return layout
     }
     lazy var btn: UIButton = {
-        $0.frame = CGRect(x: view.frame.width - 60, y: view.frame.height - 60, width: 50, height: 50)
-        $0.setImage(UIImage(systemName: "plus"), for: .normal)
-        $0.backgroundColor = .red
+        let btnWidth = 200.0
+        $0.frame = CGRect(x: view.frame.width - btnWidth - 50, y: view.frame.height - 100.0, width: btnWidth, height: 50)
+        //$0.setImage(UIImage(systemName: "plus"), for: .normal)
+        $0.backgroundColor = .blue
+        $0.setTitle("Regenerate API call", for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
+        $0.setTitleColor(.white, for: .normal)
+        $0.layer.cornerRadius = 10
         return $0
     }(UIButton(primaryAction: UIAction(handler: { _ in
         self.sendReq()
