@@ -10,7 +10,7 @@ import Kingfisher
 
 
 protocol DetailVCProtocol: AnyObject {
-    
+    var item: Items? { get set }
 }
 
 class DetailVC: UIViewController, DetailVCProtocol {

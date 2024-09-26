@@ -42,11 +42,11 @@ class MainCell: UICollectionViewCell {
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 7),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            
             descLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3),
             descLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             descLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            descLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
-            
+            descLabel.heightAnchor.constraint(equalToConstant: 34)
         ])
         
     }

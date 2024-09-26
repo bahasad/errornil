@@ -72,6 +72,10 @@
 		1D813DBA2C9F134400663B93 /* HW4M2P8_MVC_URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				1D813DD32C9F13E200663B93 /* SceneSet */,
+				1D813DD62C9F15DF00663B93 /* Builder */,
+				1D813DDE2C9F1DDA00663B93 /* Helpers */,
+				1D813DDF2C9FD33F00663B93 /* NetworkLayer */,
 				1D813DCF2C9F13B500663B93 /* MainView */,
 				1D813DE72C9FF84900663B93 /* DetailView */,
 				1D813DC42C9F134A00663B93 /* Assets.xcassets */,
@@ -84,13 +88,9 @@
 		1D813DCF2C9F13B500663B93 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				1D813DDF2C9FD33F00663B93 /* NetworkLayer */,
-				1D813DDE2C9F1DDA00663B93 /* Helpers */,
-				1D813DD62C9F15DF00663B93 /* Builder */,
 				1D813DD22C9F13CD00663B93 /* Presenter */,
 				1D813DD12C9F13C600663B93 /* View */,
 				1D813DD02C9F13BF00663B93 /* Model */,
-				1D813DD32C9F13E200663B93 /* Apps */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -120,13 +120,13 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		1D813DD32C9F13E200663B93 /* Apps */ = {
+		1D813DD32C9F13E200663B93 /* SceneSet */ = {
 			isa = PBXGroup;
 			children = (
 				1D813DBB2C9F134400663B93 /* AppDelegate.swift */,
 				1D813DBD2C9F134400663B93 /* SceneDelegate.swift */,
 			);
-			path = Apps;
+			path = SceneSet;
 			sourceTree = "<group>";
 		};
 		1D813DD62C9F15DF00663B93 /* Builder */ = {

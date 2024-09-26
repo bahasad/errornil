@@ -15,8 +15,6 @@ class CustomLabel: UILabel {
         self.textColor = textColor
         translatesAutoresizingMaskIntoConstraints = false
         numberOfLines = 0
-        
-        
     }
     
     required init?(coder: NSCoder) {

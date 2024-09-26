@@ -29,7 +29,7 @@ class ViewController: UIViewController, ViewControllerProtocol, UICollectionView
         let sectionInset: CGFloat = 20
         let totalSpacing = (numberOfItemsPerRow - 1) * spacing + sectionInset * 2
         let itemWidth = (view.frame.width - totalSpacing) / numberOfItemsPerRow
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.5)
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth * 1.6)
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: sectionInset, left: sectionInset, bottom: 0, right: sectionInset)
@@ -82,8 +82,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = presenter.getItem(at: indexPath.row)
-        let detailVC = DetailVC()
-        detailVC.item = item
+        let detailVC = Builder.createDetailView(item: item)
         navigationController?.pushViewController(detailVC, animated: true)
     }
     

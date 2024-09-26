@@ -15,10 +15,10 @@ class Builder {
         return view
     }
     
-//    static func createDetailView() -> UIViewController {
-//        let view = DetailVC()
-//        let presenter = DetailViewPresenter(view: view)
-//        view.presenter = presenter
-//        return view
-//    }
+    static func createDetailView(item: Items) -> UIViewController {
+        let view = DetailVC()
+        let presenter = DetailViewPresenter(view: view, item: item)
+        view.presenter = presenter
+        return view
+    }
 }

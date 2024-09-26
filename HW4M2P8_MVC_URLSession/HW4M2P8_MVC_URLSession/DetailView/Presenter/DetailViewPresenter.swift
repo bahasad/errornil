@@ -8,17 +8,22 @@
 import UIKit
 
 protocol DetailViewPresenterProtocol: AnyObject {
-    
+    var item: Items { get set }
 }
 
 class DetailViewPresenter: DetailViewPresenterProtocol {
+    var item: Items
+    
     
     weak var view: DetailVCProtocol?
     
    
     
-    init(view: DetailVCProtocol?) {
+    init(view: DetailVCProtocol?, item: Items) {
         self.view = view
+        self.item = item
+        
+        view?.item = item
     }
     
    
