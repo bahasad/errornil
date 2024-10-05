@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyD4mskbwdX2He6sj0Kj5rYv7Jed_I0WuZk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>592285847405</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.baha.HW5M3P8-Persistent</string>
+	<key>PROJECT_ID</key>
+	<string>p8firebase-f0c83</string>
+	<key>STORAGE_BUCKET</key>
+	<string>p8firebase-f0c83.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:592285847405:ios:cbee2089a0ff56ec495464</string>
+</dict>
+</plist>
