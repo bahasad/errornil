@@ -116,7 +116,7 @@ class ViewBuilder {
     
     
     func setUpLabelsToSstack() {
-        let label99 = self.setLabel(text: subscrArr[0] )
+        let label99 = self.setLabel(text: subscrArr[0])
         let label120 = self.setLabel(text: subscrArr[1])
         let label300 = self.setLabel(text: subscrArr[2])
         
