@@ -15,7 +15,7 @@ class FirstVC : UIViewController, FirstVCDelegate {
     
     lazy var carduiview = CardUIView(frame: CGRect(x: 30, y: 101, width: self.view.frame.width - 60, height: 110))
     lazy var uiimageview = FirstVCImageView(frame: CGRect(x: 17, y: 18, width: 75, height: 75))
-    lazy var firstvcuilabel = FirstVCUILabel(frame: CGRect(x: uiimageview.frame.maxX + 12, y: 29, width: 111, height: 19), text: "Anna Petrova", weight: .bold)
+    lazy var firstvcuilabel = FirstVCUILabel(frame: CGRect(x: uiimageview.frame.maxX + 12, y: 29, width: 150, height: 19), text: "Anna Petrova", weight: .bold)
     lazy var firstvceditbutton = FirstVCUIButton(frame: CGRect(x: uiimageview.frame.maxX + 12, y: firstvcuilabel.frame.maxY + 7, width: 147, height: 30), title: "Редактировать", radius: 10)
     lazy var firstVCArrowBtn = FirstVCArrowRightBtn(frame: CGRect(x: carduiview.frame.width - 27, y: 47, width: 17, height: 17))
     var desc : String?

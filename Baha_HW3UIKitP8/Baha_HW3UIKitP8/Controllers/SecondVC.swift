@@ -19,7 +19,7 @@ class SecondVC: UIViewController {
     
     lazy var nameLabel =  FirstVCUILabel(frame: CGRect(x: 42, y: 97, width: 34, height: 19), text: "Имя", weight: .light)
     lazy var nameTextField = SeconVCTextField(frame: CGRect(x: 30, y: nameLabel.frame.maxY + 5, width: view.frame.size.width - 60, height: 51))
-    lazy var surnameLabel =  FirstVCUILabel(frame: CGRect(x: nameTextField.frame.minX, y: nameTextField.frame.maxY + 22, width: 73, height: 19), text: "Фамилия", weight:.light)
+    lazy var surnameLabel =  FirstVCUILabel(frame: CGRect(x: nameLabel.frame.minX, y: nameTextField.frame.maxY + 22, width: 73, height: 19), text: "Фамилия", weight:.light)
     lazy var surnameTextField = SeconVCTextField(frame: CGRect(x: nameTextField.frame.minX, y: surnameLabel.frame.maxY + 5, width: nameTextField.frame.size.width, height: 51))
     lazy var descrLabel =  FirstVCUILabel(frame: CGRect(x: surnameLabel.frame.minX, y: surnameTextField.frame.maxY + 22, width: 80, height: 19), text: "Описание", weight: .light)
     lazy var descrTextView = SeconVCTextView(frame: CGRect(x: surnameTextField.frame.minX, y: descrLabel.frame.maxY + 5, width: surnameTextField.frame.size.width, height: 144), text: "", textContainer: nil)
