@@ -51,7 +51,7 @@ struct ContentView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 6) {
                             ForEach(vm.continueWatchingMovies, id: \.self) { movie in
-                                MainMoviesView(movie: movie)
+                                FooterMovieView(movie: movie, frameHeight: 123, cornerRadius: 5)
                             }
                         }
                         .padding(.horizontal, 16)
@@ -65,7 +65,7 @@ struct ContentView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 6) {
                             ForEach(vm.footerMovies, id: \.self) { movie in
-                                FooterMovieView(movie: movie)
+                                FooterMovieView(movie: movie, frameHeight: 128, cornerRadius: 8)
                             }
                         }
                         .padding(.horizontal, 16)
@@ -97,7 +97,9 @@ struct MoviewHeaderView: View {
 }
 
 struct IconsView: View {
+    
     let categories: Category
+    
     var body: some View {
         HStack(spacing: 12) {
             Image(categories.icon)
@@ -107,7 +109,7 @@ struct IconsView: View {
                 .font(.system(size: 14))
                 .foregroundStyle(.white)
         }
-        .frame(height: 44)
+        .padding([.top, .bottom], 10)
         .padding(.horizontal, 16)
         .background(Color.appColorCartoonBack)
         .clipShape(.rect(cornerRadius: 5))
@@ -130,24 +132,15 @@ struct HeaderTextView: View {
     }
 }
 
-struct MainMoviesView: View {
-    let movie: Movie
-    var body: some View {
-        Image(movie.imageName)
-            .resizable()
-            .scaledToFit()
-            .frame(height: 123)
-            .clipShape(.rect(cornerRadius: 5))
-    }
-}
-
 struct FooterMovieView: View {
     let movie: Movie
+    var frameHeight: CGFloat
+    var cornerRadius: CGFloat
     var body: some View {
         Image(movie.imageName)
             .resizable()
             .scaledToFit()
-            .frame(height: 128)
-            .clipShape(.rect(cornerRadius: 8))
+            .frame(height: frameHeight)
+            .clipShape(.rect(cornerRadius: cornerRadius))
     }
 }
