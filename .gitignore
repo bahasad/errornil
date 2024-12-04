@@ -1,0 +1,9 @@
+# Ignore Xcode user data files
+*.xcuserstate
+
+# Ignore build and temporary files
+*.build/
+*.tmp
+*.log
+DerivedData/
+
